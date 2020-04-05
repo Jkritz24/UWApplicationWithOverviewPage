@@ -35,12 +35,12 @@
         <th>
             @Html.DisplayNameFor(model => model.UWYear)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.UWDateCreated)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.UWDateLastEdited)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -70,15 +70,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.UWYear)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.UWDateCreated)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UWDateLastEdited)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "EditContribtuion", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>

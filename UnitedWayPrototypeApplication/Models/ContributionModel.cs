@@ -32,7 +32,7 @@ namespace UnitedWayPrototypeApplication.Models
         public string contributionlname { get; set; }
         */
      //   [DataType(DataType.Text)]
-        [Display(Name = "Agency ID (optional)")]
+        [Display(Name = "Agency ID")]
         [Required(ErrorMessage = "You must enter an Agency ID (Enter '0' if there is no agency).")]
         [Range(0,10000000, ErrorMessage = "Agency ID must be valid (Enter '0' if there is no agency).")]
         public int AgencyID { get; set; }
@@ -59,7 +59,7 @@ namespace UnitedWayPrototypeApplication.Models
         [Display(Name = "Total Contribution Amount")]
         public double uwcontributionamount { get; set; }
 
-        [Display(Name = "Current Year")]
+        [Display(Name = "Giving Year")]
         public int UWYear { get; set; }
 
         // Commented out in HTML

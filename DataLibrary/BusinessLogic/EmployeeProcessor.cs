@@ -12,7 +12,7 @@ namespace DataLibrary.BusinessLogic
     {
         public static int CreateEmployee(int empCWID, string firstName, string lastName, string empMI, 
             string streetAddress, string empCity, string empState, string empZip, string payroll, int salary, 
-            int empPoBox, string empPoBoxCity, string empPoBoxState, int empOrgCode, string empDepartment, 
+            int empPoBox, string empPoBoxCity, string empPoBoxState, int empOrgCode, 
             bool empStatus, DateTime empDateCreated)
         {
             EmployeeModel data = new EmployeeModel
@@ -31,8 +31,6 @@ namespace DataLibrary.BusinessLogic
                 POBoxCity = empPoBoxCity,
                 POBoxState = empPoBoxState,
                 OrgCode = empOrgCode,
-                EmployeeDepartment = empDepartment,
-                //GivingYear = givingYear,
                 EmployeeStatus = empStatus,
                 EmployeeDateCreated = empDateCreated,
             };

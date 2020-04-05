@@ -61,9 +61,6 @@ namespace UnitedWayPrototypeApplication.Models
         [Display(Name = "Org Code")]
         public int OrgCode { get; set; }
 
-        [Display(Name = "Department")]
-        public string EmployeeDepartment { get; set; }
-
         //[Display(Name = "Giving Year")]
         //[Required(ErrorMessage = "You must enter the giving year")]
         //public int GivingYear { get; set; } 

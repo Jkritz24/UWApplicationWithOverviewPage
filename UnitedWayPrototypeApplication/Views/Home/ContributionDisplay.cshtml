@@ -1,0 +1,92 @@
+﻿@model IEnumerable<UnitedWayPrototypeApplication.Models.ContributionDisplayModel>
+
+@{
+    ViewBag.Title = "ContributionDisplay";
+}
+
+<h2>Overview</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ContributionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CWID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Division)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UWType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UWMonthly)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UWMonths)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uwcontributionamount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgencyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UWYear)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ContributionID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CWID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EmployeeFirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EmployeeLastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Division)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DepartmentName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UWType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UWMonthly)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UWMonths)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.uwcontributionamount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AgencyName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UWYear)
+    </td>
+</tr>
+}
+
+</table>
