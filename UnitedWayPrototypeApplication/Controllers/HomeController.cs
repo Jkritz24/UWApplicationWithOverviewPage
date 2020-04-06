@@ -193,36 +193,6 @@ namespace UnitedWayPrototypeApplication.Controllers
             return View(contributions);
         }
 
-        public ActionResult ContributionDisplay()
-        {
-            ViewBag.Message = "Contribution Display Overview";
-            //utilizing the SQL SELECT statements in ContributionProcessor to LOAD the contributions
-            var data = DataLibrary.BusinessLogic.ContributionDisplayProcessor.LoadContributionDisplay();
-
-            //using the SQL SELECT statements in ContributionProcessor to LOAD the contributions to a list
-            List<ContributionDisplayModel> contributiondisplay = new List<ContributionDisplayModel>();
-            //create new row for each record
-            foreach (var row in data)
-            {
-                contributiondisplay.Add(new ContributionDisplayModel
-                {
-                    ContributionID = row.ContributionID,
-                    CWID = row.CWID,
-                    EmployeeFirstName = row.EmployeeFirstName,
-                    EmployeeLastName = row.EmployeeLastName,
-                    Division = row.Division,
-                    DepartmentName = row.DepartmentName,
-                    AgencyName = row.AgencyName,
-                    UWType = row.UWType,
-                    UWMonthly = row.UWMonthly,
-                    UWMonths = row.UWMonths,
-                    uwcontributionamount = row.uwcontributionamount,
-                    UWYear = row.UWYear
-                });
-            }
-
-            return View(contributiondisplay);
-        }
 
         public ActionResult CreateContribution()
         {
@@ -322,6 +292,101 @@ namespace UnitedWayPrototypeApplication.Controllers
                 return RedirectToAction("Department");
             }
             return View();
+        }
+
+        public ActionResult ContributionDisplay()
+        {
+            ViewBag.Message = "Contribution Display Overview";
+            //utilizing the SQL SELECT statements in ContributionProcessor to LOAD the contributions
+            var data = DataLibrary.BusinessLogic.ContributionDisplayProcessor.LoadContributionDisplay();
+
+            //using the SQL SELECT statements in ContributionProcessor to LOAD the contributions to a list
+            List<ContributionDisplayModel> contributiondisplay = new List<ContributionDisplayModel>();
+            //create new row for each record
+            foreach (var row in data)
+            {
+                contributiondisplay.Add(new ContributionDisplayModel
+                {
+                    ContributionID = row.ContributionID,
+                    CWID = row.CWID,
+                    EmployeeFirstName = row.EmployeeFirstName,
+                    EmployeeLastName = row.EmployeeLastName,
+                    Division = row.Division,
+                    DepartmentName = row.DepartmentName,
+                    AgencyName = row.AgencyName,
+                    UWType = row.UWType,
+                    UWMonthly = row.UWMonthly,
+                    UWMonths = row.UWMonths,
+                    uwcontributionamount = row.uwcontributionamount,
+                    UWYear = row.UWYear
+                });
+            }
+
+            return View(contributiondisplay);
+        }
+
+        public ActionResult SortByLastName()
+        {
+            ViewBag.Message = "Contribution Display Overview By Last Name";
+            //utilizing the SQL SELECT statements in ContributionProcessor to LOAD the contributions
+            var data = DataLibrary.BusinessLogic.ContributionDisplayProcessor.LoadContributionDisplay();
+
+            //using the SQL SELECT statements in ContributionProcessor to LOAD the contributions to a list
+            List<ContributionDisplayModel> contributiondisplay = new List<ContributionDisplayModel>();
+            //create new row for each record
+            foreach (var row in data)
+            {
+                contributiondisplay.Add(new ContributionDisplayModel
+                {
+                    ContributionID = row.ContributionID,
+                    CWID = row.CWID,
+                    EmployeeFirstName = row.EmployeeFirstName,
+                    EmployeeLastName = row.EmployeeLastName,
+                    Division = row.Division,
+                    DepartmentName = row.DepartmentName,
+                    AgencyName = row.AgencyName,
+                    UWType = row.UWType,
+                    UWMonthly = row.UWMonthly,
+                    UWMonths = row.UWMonths,
+                    uwcontributionamount = row.uwcontributionamount,
+                    UWYear = row.UWYear
+                });
+            }
+            List<ContributionDisplayModel> c = contributiondisplay.OrderBy(x => x.EmployeeFirstName).ToList();
+
+            return View(c);
+        }
+
+        public ActionResult SortDescendingByLastName()
+        {
+            ViewBag.Message = "Contribution Display Overview Descending By Last Name";
+            //utilizing the SQL SELECT statements in ContributionProcessor to LOAD the contributions
+            var data = DataLibrary.BusinessLogic.ContributionDisplayProcessor.LoadContributionDisplay();
+
+            //using the SQL SELECT statements in ContributionProcessor to LOAD the contributions to a list
+            List<ContributionDisplayModel> contributiondisplay = new List<ContributionDisplayModel>();
+            //create new row for each record
+            foreach (var row in data)
+            {
+                contributiondisplay.Add(new ContributionDisplayModel
+                {
+                    ContributionID = row.ContributionID,
+                    CWID = row.CWID,
+                    EmployeeFirstName = row.EmployeeFirstName,
+                    EmployeeLastName = row.EmployeeLastName,
+                    Division = row.Division,
+                    DepartmentName = row.DepartmentName,
+                    AgencyName = row.AgencyName,
+                    UWType = row.UWType,
+                    UWMonthly = row.UWMonthly,
+                    UWMonths = row.UWMonths,
+                    uwcontributionamount = row.uwcontributionamount,
+                    UWYear = row.UWYear
+                });
+            }
+            List<ContributionDisplayModel> c = contributiondisplay.OrderByDescending(x => x.EmployeeFirstName).ToList();
+
+            return View(c);
         }
 
     }

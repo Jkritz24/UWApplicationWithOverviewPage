@@ -187,6 +187,8 @@
     <Content Include="Views\Home\EditDepartment.cshtml" />
     <Content Include="Views\Home\SideMenu.cshtml" />
     <Content Include="Views\Home\ContributionDisplay.cshtml" />
+    <Content Include="Views\Home\SortByLastName.cshtml" />
+    <Content Include="Views\Home\SortDescendingByLastName.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
