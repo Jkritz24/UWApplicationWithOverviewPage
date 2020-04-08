@@ -130,7 +130,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AgencyModel.cs" />
-    <Compile Include="Models\ContributionDisplayModel.cs" />
+    <Compile Include="Models\ContributionListModel.cs" />
     <Compile Include="Models\ContributionModel.cs" />
     <Compile Include="Models\DepartmentModel.cs" />
     <Compile Include="Models\EmployeeModel.cs" />

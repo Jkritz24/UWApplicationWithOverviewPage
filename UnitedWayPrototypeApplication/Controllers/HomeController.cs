@@ -194,6 +194,8 @@ namespace UnitedWayPrototypeApplication.Controllers
         }
 
 
+
+
         public ActionResult CreateContribution()
         {
             ViewBag.Message = "Enter new Contribution";
@@ -293,19 +295,19 @@ namespace UnitedWayPrototypeApplication.Controllers
             }
             return View();
         }
-
+        
         public ActionResult ContributionDisplay()
         {
             ViewBag.Message = "Contribution Display Overview";
             //utilizing the SQL SELECT statements in ContributionProcessor to LOAD the contributions
-            var data = DataLibrary.BusinessLogic.ContributionDisplayProcessor.LoadContributionDisplay();
+            var data = DataLibrary.BusinessLogic.ContributionProcessor.LoadContributionList();
 
             //using the SQL SELECT statements in ContributionProcessor to LOAD the contributions to a list
-            List<ContributionDisplayModel> contributiondisplay = new List<ContributionDisplayModel>();
+            List<ContributionListModel> contributiondisplay = new List<ContributionListModel>();
             //create new row for each record
             foreach (var row in data)
             {
-                contributiondisplay.Add(new ContributionDisplayModel
+                contributiondisplay.Add(new ContributionListModel
                 {
                     ContributionID = row.ContributionID,
                     CWID = row.CWID,
@@ -324,7 +326,7 @@ namespace UnitedWayPrototypeApplication.Controllers
 
             return View(contributiondisplay);
         }
-
+        /*
         public ActionResult SortByLastName()
         {
             ViewBag.Message = "Contribution Display Overview By Last Name";
@@ -332,11 +334,11 @@ namespace UnitedWayPrototypeApplication.Controllers
             var data = DataLibrary.BusinessLogic.ContributionDisplayProcessor.LoadContributionDisplay();
 
             //using the SQL SELECT statements in ContributionProcessor to LOAD the contributions to a list
-            List<ContributionDisplayModel> contributiondisplay = new List<ContributionDisplayModel>();
+            List<ContributionListModel> contributiondisplay = new List<ContributionListModel>();
             //create new row for each record
             foreach (var row in data)
             {
-                contributiondisplay.Add(new ContributionDisplayModel
+                contributiondisplay.Add(new ContributionListModel
                 {
                     ContributionID = row.ContributionID,
                     CWID = row.CWID,
@@ -352,7 +354,7 @@ namespace UnitedWayPrototypeApplication.Controllers
                     UWYear = row.UWYear
                 });
             }
-            List<ContributionDisplayModel> c = contributiondisplay.OrderBy(x => x.EmployeeFirstName).ToList();
+            List<ContributionListModel> c = contributiondisplay.OrderBy(x => x.EmployeeFirstName).ToList();
 
             return View(c);
         }
@@ -364,11 +366,11 @@ namespace UnitedWayPrototypeApplication.Controllers
             var data = DataLibrary.BusinessLogic.ContributionDisplayProcessor.LoadContributionDisplay();
 
             //using the SQL SELECT statements in ContributionProcessor to LOAD the contributions to a list
-            List<ContributionDisplayModel> contributiondisplay = new List<ContributionDisplayModel>();
+            List<ContributionListModel> contributiondisplay = new List<ContributionListModel>();
             //create new row for each record
             foreach (var row in data)
             {
-                contributiondisplay.Add(new ContributionDisplayModel
+                contributiondisplay.Add(new ContributionListModel
                 {
                     ContributionID = row.ContributionID,
                     CWID = row.CWID,
@@ -384,10 +386,10 @@ namespace UnitedWayPrototypeApplication.Controllers
                     UWYear = row.UWYear
                 });
             }
-            List<ContributionDisplayModel> c = contributiondisplay.OrderByDescending(x => x.EmployeeFirstName).ToList();
+            List<ContributionListModel> c = contributiondisplay.OrderByDescending(x => x.EmployeeFirstName).ToList();
 
             return View(c);
         }
-
+        */
     }
 }

@@ -44,8 +44,30 @@ namespace DataLibrary.BusinessLogic
             return SQLDataAccess.LoadData<ContributionModel>(sql);
         }
 
+        public static List<ContributionListModel> LoadContributionList()
 
-        
+        {
+
+            string sql = @"SELECT contributionid, C.cwid, C.uwdatecreated, C.uwdateedited, e.employeefirstname, e.employeelastname, d.departmentname, d.division,
+                            A.agencyname, C.uwtype, C.uwmonthly, C.uwmonths, C.uwcontributionamount, C.uwyear
+                            FROM Contribution (NOLOCK) C
+                            INNER JOIN Employee (NOLOCK) E
+                                ON C.cwid = E.cwid
+                            INNER JOIN Department (NOLOCK) D
+                                ON E.orgcode = D.orgcode
+
+                            INNER JOIN Agency (NOLOCK) A
+
+                                ON A.agencyid = C.agencyid;";
+
+
+
+            return SQLDataAccess.LoadData<ContributionListModel>(sql);
+
+        }
+
+
+
 
     }
 }

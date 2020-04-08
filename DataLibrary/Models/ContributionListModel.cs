@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLibrary.Models
 {
-    public class ContributionDisplayModel
+    public class ContributionListModel
     {
         public int ContributionID { get; set; }
         public int CWID { get; set; }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 namespace UnitedWayPrototypeApplication.Models
 {
-    public class ContributionDisplayModel
+    public class ContributionListModel
     {
         [Display(Name = "Contribution ID")]
         public int ContributionID { get; set; }
